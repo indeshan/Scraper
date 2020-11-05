@@ -1,0 +1,21 @@
+{
+   "background": {
+      "scripts": [ "js/background.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "js/contentscript.js" ],
+      "matches": ["http://www.amazon.in/*", "https://www.amazon.in/*"],
+      "run_at": "document_idle"
+   } ],
+   "description": "Collects information about safety claims from safety claims pages on Amazon.",
+   "manifest_version": 2,
+   "name": "SafeHai",
+   "page_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html",
+      "default_title": "SafeHai"
+   },
+   "permissions": [ "activeTab", "clipboardWrite" ],
+   "version": "1.0"
+}
