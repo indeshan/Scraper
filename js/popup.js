@@ -6,16 +6,19 @@ chrome.tabs.query(
 		{from: 'popup',
 	     subject: 'getData'},
 		insertDataInTable);
-        }
-	);
-function insertDataInTable(data){
+        });
+
+function insertDataInTable(data) {
 	document.getElementById('title').innerHTML = data.title;
 	document.getElementById('review').innerHTML = data.reviews;
 	document.getElementById('price').innerHTML = data.price;
 }
+
 function claim() {
- alert("SafeHai");
+	alert("SafeHai");
+	//TODO: call api to push data
 }
-document.addEventListener('DOMContentLoaded', function(){
+
+document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('claim').onclick = claim;
 });
